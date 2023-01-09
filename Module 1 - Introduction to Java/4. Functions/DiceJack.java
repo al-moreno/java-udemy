@@ -26,7 +26,13 @@ public class DiceJack {
 
         System.out.println("dice sum: " + sumOfDiceRolls + ". num sum: " + sumOfNumers);
 
-        checkWinner(sumOfDiceRolls, sumOfNumers);
+        if (checkWinner(sumOfDiceRolls, sumOfNumers)) {
+            System.out.println(" User Wins!!! ");
+        } else if (checkTied(sumOfDiceRolls, sumOfNumers)) {
+            System.out.println("We are tied");
+        } else {
+            System.out.println("computer wins. ");
+        }
         scan.close();
     }
 
@@ -38,16 +44,13 @@ public class DiceJack {
         return (int) randomNumber; // 1 - 6
     }
 
-    public static void checkWinner(int sumOfDiceRolls, int sumOfNumers) {
+    public static boolean checkWinner(int sumOfDiceRolls, int sumOfNumers) {
+        return (sumOfNumers > sumOfDiceRolls && sumOfNumers - sumOfDiceRolls < 3);
+     
 
-        if (sumOfNumers > sumOfDiceRolls && sumOfNumers - sumOfDiceRolls < 3) {
-            System.out.println(" User Wins!!! ");
-        } else if (sumOfNumers == sumOfDiceRolls) {
-            System.out.println("We are tied");
-        } else {
-            System.out.println("computer wins. ");
-        }
-
+    }
+    public static boolean checkTied( int sumOfDiceRolls, int sumOfNumers){
+        return (sumOfNumers == sumOfDiceRolls);
     }
 
 }
