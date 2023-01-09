@@ -46,10 +46,10 @@ public class DiceJack {
 
     public static boolean checkWinner(int sumOfDiceRolls, int sumOfNumers) {
         return (sumOfNumers > sumOfDiceRolls && sumOfNumers - sumOfDiceRolls < 3);
-     
 
     }
-    public static boolean checkTied( int sumOfDiceRolls, int sumOfNumers){
+
+    public static boolean checkTied(int sumOfDiceRolls, int sumOfNumers) {
         return (sumOfNumers == sumOfDiceRolls);
     }
 
