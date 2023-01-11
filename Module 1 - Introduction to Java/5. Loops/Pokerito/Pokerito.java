@@ -81,7 +81,7 @@ public class Pokerito {
         String card;
         double randomNum = ((Math.random() * 13) + 1);
 
-        switch(randomNum){
+        switch((int)randomNum){
             case 1:
             card = "   _____\n  |A _  |\n  | ( ) |\n  |(_'_)|\n  |  |  |\n  |____V|\n";
             break; 

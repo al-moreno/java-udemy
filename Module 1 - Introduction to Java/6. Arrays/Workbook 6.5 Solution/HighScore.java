@@ -3,7 +3,12 @@ public class HighScore {
         int[] scores = {randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber()};
         
         int highScore = 0;
+
+
+
+    
         System.out.print("Here are the scores: ");    
+        
         for (int i = 0; i < scores.length; i++) {
             System.out.print(scores[i] + " ");
             if (scores[i] > highScore) {
