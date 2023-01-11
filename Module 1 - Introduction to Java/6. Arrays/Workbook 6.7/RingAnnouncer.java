@@ -6,7 +6,15 @@ public class RingAnnouncer {
         
         // Instructions for this workbook are on Learn the Part (Workbook 6.7).
         
-        System.out.println("\nWith a professional record of <wins> Wins and <losses> losses.");
+        for(int i = 0; i < record.length; i++){
+            if(record[i].equalsIgnoreCase("WIN")){
+                wins++;
+            }
+            if(record[i].equalsIgnoreCase("LOSS")){
+                losses++;
+            }
+        }
+        System.out.println("\nWith a professional record of "+wins+" Wins and "+losses+" losses.");
         System.out.println("He is the pride of oracle: Java Fury!");
 
 
