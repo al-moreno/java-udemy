@@ -155,9 +155,11 @@ for (int i = 0﻿; i < array.length; i++﻿) {
 
 ### 6.4 Reference Trap
 
-***Trap***  Setting an array variable equal to another
+***Trap***  Setting an array variable equal to another.
+
 ***Pitfall***   Both variables point to the same array.
-***Solution***  Set it equal to a copy of the array (Arrays.copyOf)
+
+***Solution***  Set it equal to a copy of the array (Arrays.copyOf).
 
 
 6.5 Defining a 2D array
