@@ -160,26 +160,30 @@ for (int i = 0﻿; i < array.length; i++﻿) {
 ***Solution***  Set it equal to a copy of the array (Arrays.copyOf).<br>
 
 
-6.5 Defining a 2D array
+### 6.5 Defining a 2D array
 
 Method 1:
+```
+Type[][] array = {
+ {element1, element2},
+ {element3, element4},
+};
+```
 
-Type[﻿]﻿[﻿] array = {
- {element1, element2}﻿,
- {element3, element4}﻿,
-}﻿;
 Method 2:
+```
+Type[][] array = new Type[2][2];
+array[0][0] = element1;
+array[0][1] = element2;
+array[1][0] = element3;
+array[1][1] = element4;
+```
 
-Type[﻿]﻿[﻿] array = new Type﻿[﻿2﻿]﻿[﻿2﻿]﻿;
-array[﻿0﻿]﻿[﻿0﻿] = element1;
-array[﻿0﻿]﻿[﻿1﻿] = element2;
-array[﻿1﻿]﻿[﻿0﻿] = element3;
-array[﻿1﻿]﻿[﻿1﻿] = element4;
-6.6 Accessing values from a 2D array
+### 6.6 Accessing values from a 2D array
 
-The first bracket indexes the row.
+- The first bracket indexes the row.
 
-The second bracket indexes the element in that row.
+- The second bracket indexes the element in that row.
 
 6.7 Looping a 2D array
 
