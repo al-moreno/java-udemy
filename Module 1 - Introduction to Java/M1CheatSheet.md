@@ -3,13 +3,10 @@
 This cheat sheet contains the most important takeaways that lead up to section six.
 
 ## 1. Getting Started
-    - class: contains all of your code.
-
-    - main(): entry point of your app.
-
-    - javac <file-name>.java: compiles your code.
-
-    - java <file-name>: runs the compiled code.
+- class: contains all of your code.
+- main(): entry point of your app.
+- javac <file-name>.java: compiles your code.
+- java <file-name>: runs the compiled code.
 
 _____
 
@@ -117,7 +114,7 @@ _____
 
 ## 6. Arrays
 
-### 6.1 Defining an array
+#### 6.1 Defining an array
 
 You can define an array and its values in one line.
 
@@ -134,33 +131,31 @@ array[2] = element3;
 
 In both cases:
 
-    - The variable does not store the array directly.
+- The variable does not store the array directly.
+- It stores a **reference** that points to it.
 
-    - It stores a **reference** that points to it.
-
-### 6.2 Accessing values from an array
+#### 6.2 Accessing values from an array
 
 You can access values from an array by referring to its index, such that:
 
-    - The first index is 0.
+- The first index is 0.
+- The last index is one less the length of the array.
 
-    - The last index is one less the length of the array.
-
-### 6.3 Looping an array
+#### 6.3 Looping an array
 ```
 for (int i = 0﻿; i < array.length; i++﻿) {
 
 }
 ```
 
-### 6.4 Reference Trap
+#### 6.4 Reference Trap
 
 ***Trap***  Setting an array variable equal to another.<br>
 ***Pitfall***   Both variables point to the same array.<br>
 ***Solution***  Set it equal to a copy of the array (Arrays.copyOf).<br>
 
 
-### 6.5 Defining a 2D array
+#### 6.5 Defining a 2D array
 
 Method 1:
 ```
@@ -179,16 +174,76 @@ array[1][0] = element3;
 array[1][1] = element4;
 ```
 
-### 6.6 Accessing values from a 2D array
+#### 6.6 Accessing values from a 2D array
 
 - The first bracket indexes the row.
 
 - The second bracket indexes the element in that row.
 
-6.7 Looping a 2D array
-
+#### 6.7 Looping a 2D array
+```
 for (int i = 0﻿; i < array.length; i++﻿) {
    for (int j = 0﻿; j < array[i]﻿.length; j++﻿) {
 
    }
 }
+```
+_____
+
+## Scanner
+
+| Method       | Skips delimiter? | Returns         | 
+| ------------ | ---------------- | --------------- |
+| nextLine()   | No               | the next line   |
+| nextDouble() | Yes              | the next double |
+| nextInt()    | Yes              | the next int    |
+| nextLong()   | Yes              | the next long   |
+| next()       | Yes              | the nex String  |
+
+
+#### Scanner Pitfall
+***Trap***  Putting `nextLine()` ahead of `nextInt()`, `nextDouble()`, `nextLong()`, or `next()`.<br>
+***Pitfall***   `nextLine()` is wasted by reading an empty line.<br>
+***Solution***  add a throwaway `nextLine()` before the real `nextLine()`.<br>
+
+## Good Coding Habits
+
+#### Conventions
+
+- class: CamelCase.
+
+- variable: lowerCamelCase.
+
+- function: lowerCamelcase.
+
+## Tips and Tricks
+
+#### Terminal
+
+- Use the up key to run previous terminal commands.
+
+- Write `clear` to clear the terminal output.
+
+- Press the `tab` key for auto-complete.
+
+#### Escape characters
+
+- `\n` adds a new line of space.
+
+- `\t` adds a new tab of space.
+
+#### Shortcut keys
+
+- Use `CMD/Ctrl+/` to comment a highlighted piece of code.
+
+- In Visual Studio Code, use `sysout` as a shortcut to `System.out.println()`
+
+- Use `Ctrl/control + C` to interrupt the terminal output.
+
+- Highlight and press `tab` for right indentation.
+
+- Highlight and press `shift + tab` for left indentation.
+
+#### Arrays
+
+- return an array on the fly using: `return new Type[] { element1, element2 };`
