@@ -125,10 +125,12 @@ You can define an array and its values in one line.
 
 You can also define the length of the array and populate it later.
 
-```Type[] array = new Type[3];``` 
-```array[0] = element1;```
-```array[1] = element2;```
-```array[2] = element3;```
+```
+Type[] array = new Type[3]; 
+array[0] = element1;
+array[1] = element2;
+array[2] = element3;
+```
 
 In both cases:
 
