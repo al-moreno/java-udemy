@@ -138,21 +138,26 @@ In both cases:
 
     - It stores a **reference** that points to it.
 
-6.2 Accessing values from an array
+### 6.2 Accessing values from an array
 
 You can access values from an array by referring to its index, such that:
 
-The first index is 0.
+    - The first index is 0.
 
-The last index is one less the length of the array.
+    - The last index is one less the length of the array.
 
-6.3 Looping an array
-
+### 6.3 Looping an array
+```
 for (int i = 0﻿; i < array.length; i++﻿) {
 
 }
-6.4 Reference Trap
+```
 
+### 6.4 Reference Trap
+
+***Trap***  Setting an array variable equal to another
+***Pitfall***   Both variables point to the same array.
+***Solution***  Set it equal to a copy of the array (Arrays.copyOf)
 
 
 6.5 Defining a 2D array
