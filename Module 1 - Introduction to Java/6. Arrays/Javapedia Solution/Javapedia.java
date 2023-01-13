@@ -6,6 +6,7 @@ public class Javapedia {
         System.out.println("\n**********Javapedia**********");
         System.out.println("How many historical figures will you register?");
         int people = scan.nextInt();
+        
         String[][] database = new String[people][3];
 
         scan.nextLine(); 
