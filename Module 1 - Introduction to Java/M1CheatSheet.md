@@ -134,9 +134,9 @@ array[2] = element3;
 
 In both cases:
 
-The variable does not store the array directly.
+    - The variable does not store the array directly.
 
-It stores a reference that points to it.
+    - It stores a **reference** that points to it.
 
 6.2 Accessing values from an array
 
