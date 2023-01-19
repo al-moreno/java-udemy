@@ -9,8 +9,10 @@ public class TicTacToe {
 
             //Task 1: Create an array with three rows of '_' characters.
 
-            //Task 2: Call the function printBoard();
+          
 
+            //Task 2: Call the function printBoard();
+          
              
               /*
               {  Task 3: Loop through turns.
@@ -49,6 +51,10 @@ public class TicTacToe {
      *      • each row precedes a tab of space
      *      • each character in the grid has one space from the other character
      */        
+
+
+
+
 
    /** Task 4 - Write a function that lets the user choose a spot
      * Function name – askUser
