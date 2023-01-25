@@ -150,6 +150,29 @@ public class TicTacToe {
         count = 0;
       }
     }
+
+    for(int i = 0; i<3; i++){
+      for(int j = 0; j < board.length; j++){
+        if(board[j][i] =='X'){
+          count++;
+        } else if (board[j][i]== 'O'){
+          count--;
+        }
+      }
+      if (count == 3 || count == -3){
+        return count;
+      
+      }else{
+        count = 0;
+      }
+    }
+
+
+
+
+
+
+
     return count;
   }
 
