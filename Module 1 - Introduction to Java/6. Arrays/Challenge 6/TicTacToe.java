@@ -33,6 +33,17 @@ public class TicTacToe {
       board[spot[0]][spot[1]]= 'O';
      }
      printBoard(board);
+
+     int count = checkWin(board);
+
+     if (count == 3){
+      System.out.println("X wins!!!");
+      break;
+
+     }else if (count == -3){
+      System.out.println("O Wins!!");
+      break;
+     }
     }
     /*
      * { Task 3: Loop through turns.
@@ -108,6 +119,11 @@ public class TicTacToe {
     System.out.print(" - pick a row and column number: ");
     int row = scan.nextInt();
     int element = scan.nextInt();
+    while(board[row][element]!='_'){
+      System.out.print("This spot is taken, try again: ");
+      row = scan.nextInt();
+      element = scan.nextInt();
+    }
     return new int[] {row, element};
   }
   /**
@@ -124,5 +140,9 @@ public class TicTacToe {
    *         4. Check the left diagonal for a straight X or straight O (Task 9).
    *         5. Check the right diagonal for a straight X or straight O (Task 10).
    */
+  public static int checkWin(char[][] board) {
+    int count = 0;
+    return count;
+  }
 
 }
