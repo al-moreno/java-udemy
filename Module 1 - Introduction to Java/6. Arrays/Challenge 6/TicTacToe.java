@@ -20,30 +20,28 @@ public class TicTacToe {
     // Task 2: Call the function printBoard();
     printBoard(board);
 
+    for (int i = 0; i < 9; i++) {
+      if (i % 2 == 0) {
+        System.out.println("Turn: X");
+        int[] spot = askUser(board);
+        board[spot[0]][spot[1]] = 'X';
+      } else {
+        System.out.println("Turn: O");
+        int[] spot = askUser(board);
+        board[spot[0]][spot[1]] = 'O';
+      }
+      printBoard(board);
 
+      int count = checkWin(board);
 
-    for (int i = 0; i < 9; i++){
-     if(i % 2 == 0){
-      System.out.println("Turn: X");
-      int[] spot = askUser(board);
-      board[spot[0]][spot[1]] = 'X';
-     }else {
-      System.out.println("Turn: O");
-      int[] spot = askUser(board);
-      board[spot[0]][spot[1]]= 'O';
-     }
-     printBoard(board);
+      if (count == 3) {
+        System.out.println("X wins!!!");
+        break;
 
-     int count = checkWin(board);
-
-     if (count == 3){
-      System.out.println("X wins!!!");
-      break;
-
-     }else if (count == -3){
-      System.out.println("O Wins!!");
-      break;
-     }
+      } else if (count == -3) {
+        System.out.println("O Wins!!");
+        break;
+      }
     }
     /*
      * { Task 3: Loop through turns.
@@ -66,11 +64,6 @@ public class TicTacToe {
      * 
      * }
      */
-
-
-
-
-
 
     scan.close();
   }
@@ -115,17 +108,18 @@ public class TicTacToe {
    *         3. Return the row and column in an int[] array.
    * 
    */
-  public static int[] askUser(char[][] board){
+  public static int[] askUser(char[][] board) {
     System.out.print(" - pick a row and column number: ");
     int row = scan.nextInt();
     int element = scan.nextInt();
-    while(board[row][element]!='_'){
+    while (board[row][element] != '_') {
       System.out.print("This spot is taken, try again: ");
       row = scan.nextInt();
       element = scan.nextInt();
     }
-    return new int[] {row, element};
+    return new int[] { row, element };
   }
+
   /**
    * Task 6 - Write a function that determines the winner
    * Function name - checkWin
@@ -142,6 +136,20 @@ public class TicTacToe {
    */
   public static int checkWin(char[][] board) {
     int count = 0;
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board[i].length; j++) {
+        if (board[i][j] == 'X') {
+          count++;
+        } else if (board[i][j] == 'O') {
+          count--;
+        }
+      }
+      if (count == 3 || count == -3) {
+        return count;
+      } else {
+        count = 0;
+      }
+    }
     return count;
   }
 
