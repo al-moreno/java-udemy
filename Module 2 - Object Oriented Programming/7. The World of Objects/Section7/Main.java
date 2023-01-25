@@ -7,9 +7,11 @@ public class Main {
         nissan.year = 2020;
         nissan.color = "Green";
         // same results usilizing a constructor
-
-        Car dodge = new Car("Dodge", 29999, 2018, "blue");
-    
+         Car dodge = new Car ();
+        dodge.make = "Dodge";
+        dodge.price = 29999;
+        dodge.year = 2018;
+        dodge.color = "blue";
 
         System.out.println("This " + nissan.make + " is worth $" + nissan.price +
                 ". It was built in " + nissan.year + ". It is " + nissan.color + ".\n");
