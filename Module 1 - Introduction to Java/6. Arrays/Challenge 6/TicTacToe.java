@@ -174,13 +174,20 @@ public class TicTacToe {
         count--;
       }
     }
-    if(count == 3 || count == -3){
+    if (count == 3 || count == -3) {
       return count;
-    }else {
+    } else {
       count = 0;
     }
 
+    for (int i = 0; i < 3; i++) {
+      int rowIndex = 2 - i;
+      if (board[rowIndex][i] == 'X') {
+        count++;
+      } else if (board[rowIndex][i] == 'O') {
+        count--;
+      }
+    }
     return count;
   }
-
 }
