@@ -5,6 +5,7 @@ public class Car {
     private int year;
     private String color;
 
+
     // creating a constructor to create a car object and update its fields all in
     // one line. A constructor runs as soon as I create an object. The purpose is to
     // update an objects fields
@@ -16,6 +17,19 @@ public class Car {
         this.year = year;
         this.color = color;
     }
+
+    //copy constructor
+    public Car(Car source){
+        this.make = source.make;
+        this.price = source.price;
+        this.year = source.year;
+        this.color = source.color;
+    }
+
+
+
+
+    //copy constructor to avoid setting variables to each other.
 
     public String getMake() {
         return this.make;
@@ -43,6 +57,10 @@ public class Car {
     }
     public void setColor(String color){
         this.color = color;
+    }
+
+    public void drive(){
+        System.out.println("\n You bought the beatufil "+ this.year + " " + this.make);
     }
 
 }
