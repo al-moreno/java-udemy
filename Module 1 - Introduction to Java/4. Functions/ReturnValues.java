@@ -1,28 +1,17 @@
-import java.beans.ExceptionListener;
+import java.io.Externalizable;
+import java.util.Scanner;
 
 public class ReturnValues {
-    public static void main(String[] args) {
-
-        double area1 = calculateArea(2.6, 3.2);
-        printArea(2.6, 3.2, area1);
-        // double area2 = calculateArea(2.6, 3.2);
-        // double area3 = calculateArea(2.6, 3.2);
-
-        String englishExplanation = explainArea("English");
-        System.out.println(englishExplanation);
-        // String frenchExplanation = explainArea("French");
-        // String spanishExplanation = explainArea("Spanish");
-        // String otherExplanation = explainArea("Italian");
-
-    }
     
+    private static Scanner scan = new Scanner(System.in);
+
 
     public static double calculateArea(double length, double width) {
-
         if (length < 0 || width < 0) {
-            System.out.println("Invalid Dementions");
-            System.exit(0);
+            System.out.println("Invalid Dimensions");
+            System.out.println(0);
         }
+
         double area = length * width;
         return area;
     }
@@ -31,18 +20,31 @@ public class ReturnValues {
 
         switch (language) {
             case "English":
-                return "Area is length * width\n";
+                return "Area equals length * width";
             case "French":
                 return "La surface est egale a la longueur * la largeur";
             case "Spanish":
-                return "Area es isual a largo * ancho";
+                return "area es igual a largo * ancho";
             default:
                 return "Language not available";
         }
+
     }
 
-    public static void printArea(double length, double width, double area){
-        System.out.println("\nA rectable with a lenght of " + length + " length and a width of " + width+ ", has an area of "+ area+ ".");
+    public static void printArea(double length, double width, double area) {
+        System.out.println("The room's length was: " + length + ". The room's width was: " + width
+                + ". This resulted in an area of: " + area);
+
+    }
+
+    public static void main(String[] args) {
+
+        double area1 = calculateArea(1, 2);
+        printArea(1, 2, area1);
+    
+        String englishExplanation = explainArea("English");
+        System.out.println(englishExplanation);
+      
     }
 
 }
