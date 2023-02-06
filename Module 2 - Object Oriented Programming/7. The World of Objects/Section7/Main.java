@@ -1,22 +1,30 @@
+import java.util.Scanner;
+
 public class Main {
+
+    public static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
-        //utilizing class of car
-        Car nissan = new Car();
-        nissan.make = "Nissan";
-        nissan.price = 10000;
-        nissan.year = 2020;
-        nissan.color = "Green";
-        // same results usilizing a constructor
-         Car dodge = new Car ();
-        dodge.make = "Dodge";
-        dodge.price = 29999;
-        dodge.year = 2018;
-        dodge.color = "blue";
 
-        System.out.println("This " + nissan.make + " is worth $" + nissan.price +
-                ". It was built in " + nissan.year + ". It is " + nissan.color + ".\n");
-        System.out.println("This " + dodge.make + " is worth $" + dodge.price +
-                ". It was built in " + dodge.year + ". It is " + dodge.color + ".\n");
+        Car[] cars = new Car[] {
+                new Car("Nissan", 5000, 2020, "red", new String[] { "tires", "keys" }),
+                new Car("Dodge", 8500, 2019, "blue", new String[] { "tires", "keys" }),
+                new Car("Nissan", 5000, 2017, "yellow", new String[] { "tires", "filter" }),
+                new Car("Honda", 7000, 2019, "orange", new String[] { "tires", "filter" }),
+                new Car("Mercedes", 12000, 2015, "jet black", new String[] { "tires", "filter", "transmission" })
+        };
+
+        Dealership dealership = new Dealership(cars);
+
+        System.out.println("\n ****** JAVA DEALERSHIP! ****** \n");
+        System.out.println("Feel free to browse through our collection of cars.\n");
+        System.out.println(dealership);
+        System.out.println("Which car are you interested in? (0 – 4).\n");
+        int index = scan.nextInt();
+
+        dealership.sell(index);
+
+        scan.close();
+
     }
-
 }

@@ -1,16 +1,21 @@
+import java.util.Arrays;
+
 public class Dealership {
+
     private Car[] cars;
 
-    public Dealership(Car[] cars){
+    // deep copy
+    public Dealership(Car[] cars) {
         this.cars = new Car[cars.length];
-        for(int i = 0; i < this.cars.length; i++){
-            this.cars[i]= new Car(cars[i]);
+        for (int i = 0; i < this.cars.length; i++) {
+            this.cars[i] = new Car(cars[i]);
         }
-    } 
-    
+    }
+
     public void sell(int index){
         this.cars[index].drive();
     }
+
     public String toString() {
         String temp = "";
         for (int i = 0; i < this.cars.length; i++) {
@@ -19,5 +24,7 @@ public class Dealership {
             temp += carDescription + "\n";
         }
         return temp;
+
     }
+
 }
