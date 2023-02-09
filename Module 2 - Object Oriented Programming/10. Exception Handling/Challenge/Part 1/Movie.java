@@ -22,7 +22,7 @@ public class Movie {
 
     public void setName(String name) {
        if(name == null || name.isBlank()){
-        throw new IllegalArgumentException("The name cannot be left blank")l
+        throw new IllegalArgumentException("The name cannot be left blank");
        }
         this.name = name;
     }
@@ -32,7 +32,9 @@ public class Movie {
     }
 
     public void setFormat(String format) {
-        // TODO
+        if(format ==null || format.isBlank()){
+            throw new IllegalArgumentException("Format cannot be left blank");
+        }
         this.format = format;
     }
 
