@@ -61,11 +61,13 @@ public class Main {
         while (true) {
             System.out.print("\nSet a new rating for " + name + ": ");
 
-            // 1. Anticipate the user not entering a double.
-
+            if (!scanner.hasNextDouble()) {
+                scanner.next();
+                continue;
+            }
             double rating = scanner.nextDouble();
 
-            // 2. Anticipate the rating being incorrect.
+            if(incorrectRating(rating)) continue;
 
             return rating;
         }
