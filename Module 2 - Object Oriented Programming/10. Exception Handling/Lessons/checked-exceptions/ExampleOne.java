@@ -1,6 +1,24 @@
-public class ExampleOne {
-    public static void main(String[] args) {
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
+public class ExampleOne {
+
+    public static void main(String[] args) {
+        // greetings.txt
+
+        try {
+            FileInputStream fis = new FileInputStream("greetings.txt");
+            Scanner scanner = new Scanner(fis);
+            System.out.println(scanner.nextLine());
+            scanner.close();
+
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+
+        } finally {
+            System.out.println("\n Process Complete.");
+        }
     }
-    
+
 }

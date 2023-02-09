@@ -21,7 +21,9 @@ public class Movie {
     }
 
     public void setName(String name) {
-        // TODO
+       if(name == null || name.isBlank()){
+        throw new IllegalArgumentException("The name cannot be left blank")l
+       }
         this.name = name;
     }
     
